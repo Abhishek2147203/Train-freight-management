@@ -1,0 +1,452 @@
+
+
+
+
+
+/*Login css*/
+div.loginheader{
+	margin-bottom: 50px;
+}
+body#loginbody{
+	background: url("/Users/abhishekanand/Desktop/css/train3.jpg") no-repeat center center fixed;
+	background-size: cover;
+	font-family: arial;
+}
+div.loginheader{
+	text-align: center;
+
+}
+div.loginheader h1{
+	font-size: 50px;
+	font-weight: bold;
+	color: #a6170a;
+	padding: 0px;
+	margin: 0px;
+}
+div.loginheader h3{
+	color: #f01d0a;
+	font-size: 60px;
+	border-bottom: 5px;
+	margin: 0px;
+}
+div.loginheader p:after{
+	content: " ";
+	display: block;
+	height: 5px;
+	background: #f685a2;
+	width: 50%;
+	margin: 0 auto;
+}
+div.loginbody form{
+	margin: 0 auto;
+	width: 450px;
+	background: rgba(0,0,0,.5);
+	padding: 50px;
+	border-radius: 8px;
+	border: 2px solid #fff;
+}
+div.loginInputsContainer{
+	margin-top: 30px;
+}
+div.loginInputsContainer label
+{
+	display: block;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+div.loginInputsContainer input{
+	height: 30px;
+	width: 100%;
+	border: 2px solid #d40339;
+	font-size: 10px;
+	font-style: italic;
+	text-align: center;
+	padding: 5px;
+
+}
+div.loginButtom{
+	margin-top: 40px;
+	text-align: center;
+
+
+}
+div.loginButtom button{
+	font-size: 20px;
+	padding: 10px 40px;
+	background: #a6170a;
+	border: none;
+	color: #0a0201;
+	text-align: center;
+}
+
+
+
+
+
+
+/*HomePage*/
+body{
+	font-family: arial;
+}
+div.header{
+	display: flex;
+  align-items: center;
+  width: 100vw;
+  background-color: #fff;
+  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding: 0px 0px;
+  background-color: #fff;
+   width: 100%;
+	height: 40px;
+	background: #100dd4;
+	text-align: right;
+	position: sticky; top: 0;
+}
+
+div.marqee{
+font-size: 30px;
+padding-top: 30px;
+}
+#login{
+	text-align: right;
+}
+div.banner{
+	background: url("/Users/abhishekanand/Desktop/css/train2.jpg")no-repeat center center fixed;
+	background-size: cover;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+div.homepagecontainer{
+	width: 100%;
+	/*height: 60vh;*/
+	max-width: 900px;
+	margin: 0 auto;
+}
+}
+div.bannerheader h1{
+    font-size: 100px;
+    color: #f20c17;
+    line-height: 100%;
+}
+div.bannerheader img{
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+}
+div.bannerheader p{
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 100%;
+}
+div.header ul{
+	display: flex;
+	color: #fff;
+	width: 100%;
+	height: 0%;
+	padding: 10px;
+	padding-left: 20px;
+	margin-bottom: 10px;
+	list-style-type: none;
+}
+div.header ul li{
+	width:120px;
+	margin: 3px;
+	padding-left: 40px;
+}
+div.header ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+div.header ul li a:hover{
+    background: red;
+    border-radius: 3px;
+}
+div.header ul li a:active{
+	color: red;
+}
+div.header ul li a:visited{
+	color: maroon;
+}
+a:active{
+    color: maroon;
+}
+div.header ul li:hover .sub-menu ul{
+     display: block;
+     margin-top: 10px;
+}
+div.header ul li:hover .sub-menu ul li{
+     padding: 10px;
+     margin: 10px;
+     text-align: left;
+     width: 500px;
+     border-bottom: 1px dotted #fff;
+     background: transparent;
+     border-radius: 0;
+}
+div.bannerheader p.bannertagline{
+	margin-top: 20px;
+    font-size: 13px;
+    color:#d4f542;
+}
+.footer div.bannericons{
+	margin-top: 150px;
+	width: 50%;
+}
+div.footer div.bannericons a{
+	font-size: 35px;
+	margin-left: 40px;
+	padding: 4px 10px;
+	background: rgba(0, 0, 0, 0.5);
+	color: #868485;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	text-align: center;
+}
+.footer div.bannericons a:first-child{
+	margin-left: 0px;
+    
+}
+.footer div.bannericons a:hover{
+	color: #fff;
+	font-size: 25px;
+	background: #f685a1;
+	transition: .5s all;
+}
+div.homepagefeatures{
+	display: flex;
+	flex-direction: row;
+	
+}
+div.homepagefeature{
+	padding: 12px 20px;
+	text-align: center;
+}
+div.homepagefeature span.featureicon{
+	height: 70px;
+	width: 70px;
+	display: inline-block;
+	font-size: 30px;
+	background: #f685a1;
+	color: #fff;
+	
+	padding-top: 30px;
+	border-radius: 40%;
+	margin-bottom:20pxs ;
+}
+
+div.homepagefeature h3.feature{
+	margin-bottom: 20px;
+}
+
+div.homepagefeature p.featuredis{
+	color: #848484;
+}
+div.about{
+	background: #e6edeb;
+	font-size: 20px;
+	line-height: 100%;
+}
+div.about h3{
+	color: red;
+	text-align: center;
+	text-decoration: underline;
+}
+div.about div.aboutCon a{
+	
+	color: darkred;
+	padding: 60px;
+}
+div.about div.aboutContent a{
+	
+	color: black;
+	padding: 60px;
+	font-size: 15px;
+	text-align: justify;
+}
+div.footer{
+	text-align: left;
+	font-size: 30px;
+    padding: 30px;
+    padding-top: 20px;
+    background: #2c14c7;
+    color: #fff;
+    width: 100%;
+    height: 400px;
+}
+div.footer div.phone a{
+	color: #fff;
+}
+div.footer div.pm img{
+	width: 200px;
+	height: 200px;
+	border: 1px solid #fff;
+	text-align: right;
+	padding: 30px;
+	position: relative;
+	left: 1000px;
+	top: -250px;
+
+	background: url("/Users/abhishekanand/Desktop/css/train2.jpg");
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  /*width: 100vw;*/
+  background-color: #fff;
+  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding: 20px 20px;
+  background-color: #fff;
+   width: 100%;
+	height: 40px;
+	background: #100dd4;
+	text-align: right;
+	position: sticky; top: 0;
+	padding: 0px;
+}
+.navbar-logo {
+  color: #ff3f34;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 20px 20px;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+}
+.navbar-links li{
+	padding: 20px;
+	font-size: 17px;
+}
+.navbar-links li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px 20px;
+  /*font-weight: 0;*/
+  transition: 0 all;
+}
+
+.navbar-links li.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-links li.navbar-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.navbar-links li.navbar-dropdown .dropdown {
+  visibility: hidden;
+  opacity: 1;
+  position: absolute;
+  padding: 20px 20px;
+  top: 100%;
+  transform: translateY(50px);
+  left: 0;
+  width: 250px;
+  background: green;
+  background-color: #green;
+  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 111;
+  transition: 0 all;
+  text-align: left;
+}
+.navbar-links li.navbar-dropdown .dropdown a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+.navbar-dropdown .dropdown a:hover {
+  padding-left: 30px;
+}
+.navbar-links li a:hover {
+  color: #fff;
+}
+div.navbar a:active{
+	position: relative;
+	color: red;
+	background: yellow;
+	border-radius: 3px;
+}
+div.navbar a:visited{
+position: relative;
+	color: #fff;
+	background: red;
+	border-radius: 3px;	
+}
+
+@media only screen and (max-width: 991px)
+{
+    body#loginbody {
+	background: url("/Users/abhishekanand/Desktop/css/train1.jpg") no-repeat center center fixed;
+	background-size: cover;
+	font-family: arial;
+}
+div.homepagefeatures{
+flex-direction: column;
+	padding: 50px;
+}
+div.bannericons a{
+	font-size: 20px;
+	margin-left: 20px;
+	padding: 4px 10px;
+	background: rgba(0, 0, 0, 1.0);
+	color: #868485;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	text-align: center;
+}
+div.banner{
+	background: url("/Users/abhishekanand/Desktop/css/train2.jpg")no-repeat center center fixed;
+	background-size: cover;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: center;
+}
+div.homepagecontainer{
+	width: 100%;
+	/*height: 60vh;*/
+	max-width: 600px;
+	margin: 0 auto;
+}
+}
+div.bannerheader h1{
+    font-size: 80px;
+    color: #f20c17;
+    line-height: 80%;
+    t
+}
+div.bannerheader p{
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 100%;
+}
+
+
+/*<div class="bannericons">
+       			<a href=""><i class="fab fa-apple"></i></a>
+       			<a href=""><i class="fab fa-microsoft"></i></a>
+       			<a href=""><i class="fas fa-robot"></i></a>
+                       </div>*/
+
+
+
+
+
+
+
+
