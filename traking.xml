@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Btest.xsl"?>
+<FIOS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="emp.xsd">
+<FIOS>
+<traking>
+	<bid>101</bid>
+	<uid>001</uid>
+	<tid>1111111</tid>
+	<ExpDate>12-01-2022</ExpDate>
+	<trainNo.>12345</trainNo.>
+</traking>
+<traking>
+	<bid>102</bid>
+	<uid>002</uid>
+	<tid>222222</tid>
+	<ExpDate>12-01-2022</ExpDate>
+	<trainNo.>12345</trainNo.>
+</traking>
+<traking>
+	<bid>103</bid>
+	<uid>003</uid>
+	<tid>3333333</tid>
+	<ExpDate>12-01-2022</ExpDate>
+	<trainNo.>12346</trainNo.>
+</traking>
+<traking>
+	<bid>104</bid>
+	<uid>004</uid>
+	<tid>44444444</tid>
+	<ExpDate>12-01-2022</ExpDate>
+	<trainNo.>13768</trainNo.>
+</traking>
+</FIOS>

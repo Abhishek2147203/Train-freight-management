@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="FIOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="user">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="ID" use="required"/>
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="Age"  type="MyAge" />
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="phone" type="MyPhone" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+         <xs:simpleType name="MyAge">
+         <xs:restriction base="xs:integer">
+         <xs:minInclusive value="18"></xs:minInclusive>
+         <xs:maxInclusive value="75"></xs:maxInclusive>
+         </xs:restriction>
+         </xs:simpleType>
+         <xs:simpleType name="MyPhone">
+         <xs:restriction base="xs:integer">
+         <xs:totalDigits value="10"/>
+         </xs:restriction>
+          <xs:simpleType name="MyPhone">
+         <xs:restriction base="xs:integer">
+          <xs:pattern value="\d{10}"/>
+         </xs:restriction>
+         </xs:simpleType>
+        </xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Payment.xsl"?>
+<FIOS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="Ptest.xsd">
+   <Payment>
+      <pid>001</pid>
+      <pstatus>SUCCESS</pstatus>
+      <amt>1000</amt>
+      <pmethod>UPI</pmethod>
+      <bid>101</bid>
+   </Payment>
+   <Payment>
+      <pid>002</pid>
+      <pstatus>SUCESS</pstatus>
+      <amt>5000</amt>
+      <pmethod />
+      <bid>101</bid>
+   </Payment>
+   <Payment>
+      <pid>002</pid>
+      <pstatus>SUCCESS</pstatus>
+      <amt>6000</amt>
+      <pmethod>GooglePay</pmethod>
+      <bid>102</bid>
+   </Payment>
+   <Payment>
+      <pid>003</pid>
+      <pstatus>Failure</pstatus>
+      <amt>7000</amt>
+      <pmethod>Card</pmethod>
+      <bid>103</bid>
+   </Payment>
+   <Payment>
+      <pid>004</pid>
+      <pstatus>SUCCESS</pstatus>
+      <amt>150000</amt>
+      <pmethod>PayPhone</pmethod>
+      <bid>103</bid>
+   </Payment>
+</FIOS>
