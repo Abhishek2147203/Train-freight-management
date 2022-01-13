@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Company">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Employee" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="ID" use="required"></xs:element>
+              <xs:element name="Name" type="xs:string"></xs:element>
+              <xs:element name="Age" type="xs:string"></xs:element>
+              <xs:element name="Salary" type="MySal"></xs:element>
+              <xs:element name="email" type="xs:string"></xs:element>
+              <xs:element name="MobNum" type="xs:long"></xs:element>
+              <xs:element name="Designation" type="xs:string"></xs:element>
+              <xs:element name="Promotion" type="xs:string"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="MySal">
+ <xs:restriction base="xs:integer">
+ <xs:minInclusive value="50000"></xs:minInclusive>
+ <xs:maxInclusive value="200000"></xs:maxInclusive>
+ </xs:restriction>
+ </xs:simpleType>
+</xs:schema>
