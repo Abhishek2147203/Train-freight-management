@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Reads the XML data using JavaScript</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #7ce2af
+        }
+        
+        th {
+            background-color: #7c0f65;
+            color: white;
+        }
+        
+        .button {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            border: 4px solid rgb(55, 12, 211);
+            background: rgba(20, 192, 4, 0.5);
+            color: rgb(230, 36, 78);
+            outline: none;
+            border-radius: 30px;
+            font-size: 20px;
+            width: 300px;
+            margin: 20px;
+        }
+        
+        .button:hover {
+            color: black;
+            background: white;
+        }
+        
+        @media only screen and (max-width: 991px) {
+            body {
+                width: 80%;
+                height: 100%;
+            }
+            table {
+                border-collapse: collapse;
+                width: 80%;
+                display: flex;
+            }
+            .button {
+                position: relative;
+                display: block;
+                text-align: center;
+                padding: 20px;
+                border: 4px solid rgb(55, 12, 211);
+                background: rgba(20, 192, 4, 0.5);
+                color: rgb(230, 36, 78);
+                outline: none;
+                border-radius: 30px;
+                font-size: 22px;
+                width: 250px;
+            }
+            .input {
+                margin: 30px;
+            }
+        }
+    </style>
+
+    <!--JavaScript-->
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    employeeDetails(this);
+                }
+            };
+
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "CIA1.xml", true);
+            xmlhttp.send();
+        }
+
+        function employeeDetails(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table =
+                `<tr><th>ID</th><th>Name</th><th>Age</th>
+                    <th>Salary</th><th>Email</th><th>MobNum</th>
+                    <th>Designation</th><th>Promotion</th>
+                </tr>`;
+
+            var x = xmlDoc.getElementsByTagName("Employee");
+
+
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("id")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Name")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Age")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Salary")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("email")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("MobNum")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Designation")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Promotion")[0]
+                    .childNodes[0].nodeValue + "</td><td>";
+            }
+
+            // Print the xml data in table form
+            document.getElementById("id").innerHTML = table;
+        }
+
+        function LoadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    UserDetails(this);
+                }
+            };
+
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "lab4.xml", true);
+            xmlhttp.send();
+        }
+
+        function UserDetails(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table =
+                `<tr><th>ID</th><th>Name</th><th>Age</th><th>Email</th><th>MobNum</th>
+                </tr>`;
+
+            var x = xmlDoc.getElementsByTagName("user");
+
+
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("id")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Name")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Age")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("email")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("phone")[0]
+                    .childNodes[0].nodeValue + "</td><td>";
+            }
+
+            // Print the xml data in table form
+            document.getElementById("id").innerHTML = table;
+        }
+
+        function looadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    TrakingDetails(this);
+                }
+            };
+
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "Tracking.xml", true);
+            xmlhttp.send();
+        }
+
+        function TrakingDetails(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table =
+                `<tr><th>Booking_ID</th><th>User_ID</th><th>Traking_ID</th><th>Expected Date Of Delivery</th><th>Train_Num</th>
+                </tr>`;
+
+            var x = xmlDoc.getElementsByTagName("traking");
+
+
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("bid")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("tid")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("tid")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("ExpDate")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("trainNo.")[0]
+                    .childNodes[0].nodeValue + "</td><td>";
+            }
+
+            // Print the xml data in table form
+            document.getElementById("id").innerHTML = table;
+        }
+
+        function lloadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    GoodsDetails(this);
+                }
+            };
+
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "Goods.xml", true);
+            xmlhttp.send();
+        }
+
+        function GoodsDetails(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table =
+                `<tr><th>G_ID</th><th>Type_Of_Goods</th><th>Goods_Name</th><th>Rate_Per_Kg/Pis</th>
+                </tr>`;
+
+            var x = xmlDoc.getElementsByTagName("goods");
+
+
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("gid")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("type")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Name")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("rate")[0]
+                    .childNodes[0].nodeValue + "</td><td>";
+            }
+
+            // Print the xml data in table form
+            document.getElementById("id").innerHTML = table;
+        }
+
+        function AddXMLDoc(xname) {
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            xhttp.open("GET", xname, false);
+            xhttp.send();
+            return xhttp.responseXML;
+        }
+
+        function remove(node) {
+            xmlDoc = AddXMLDoc('Tracking.xml');
+            y = xmlDoc.getElementsByTagName(node)[0];
+            xmlDoc.documentElement.removeChild(y);
+            alert('The Element ' + node + 'has been removed!');
+        }
+
+        function removee(element) {
+            xmlDoc = AddXMLDoc('Tracking.xml');
+            y = xmlDoc.getAttributeNode(element);
+            xmlDoc.documentElement.removeAttributeNode(y);
+            alert('The Element ' + element + 'has been removed!');
+        }
+
+        function show(element) {
+            x = xmlDoc.getElementsByTagName(element);
+            for (i = 0; i < x.length; i++) {
+                document.write(x[i].childNodes[0].nodeValue);
+                document.write("<br\>");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <button type="button" class="button" onclick="loadXMLDoc()">
+            Get Employees Details
+        </button>
+
+    <button type="button" class="button" onclick="LoadXMLDoc()">
+        User Details
+    </button>
+    <button type="button" class="button" onclick="looadXMLDoc()">
+        Traking Of Goods
+    </button>
+    <button type="button" class="button" onclick="lloadXMLDoc()">
+            Get Goods Details
+        </button>
+
+
+    <br><br>
+    <table id="id"></table>
+    <footer>
+        <input class="input" type="button" value="Remove" onclick="remove('traking')">
+        <input class="input" type="button" value="Show" onclick="show('tid')">
+        <input class="input" type="button" value="R_Remove" onclick="removee('trainNo.')">
+    </footer>
+</body>
+
+</html>

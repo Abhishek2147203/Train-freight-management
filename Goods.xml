@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Goods.xsl"?>
+<FIOS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="Gtest.xsd">
+  <goods>
+      <gid>101</gid>
+    <type>Hard</type>
+    <Name>coal</Name>
+    <rate>Rs5/kg</rate>
+  </goods>
+   <goods>
+    <gid>102</gid>
+    <type>liquid</type>
+     <Name>coke</Name>
+    <rate>Rs3/kg</rate>
+  </goods>
+  <goods>
+    <gid>103</gid>
+    <type>liquid</type>
+     <Name>petrol</Name>
+    <rate>Rs10/kg</rate>
+  </goods>
+  <goods>
+    <gid>104</gid>
+    <type>minerals</type>
+     <Name>minerals</Name>
+    <rate>Rs15/kg</rate>
+  </goods>
+  <goods>
+    <gid>105</gid>
+    <type>metals</type>
+     <Name>metals</Name>
+    <rate>Rs15/kg</rate>
+  </goods>
+  <goods>
+    <gid>106</gid>
+    <type>fragile</type>
+     <Name>mirror</Name>
+    <rate>Rs20/square</rate>
+  </goods>
+  <goods>
+    <gid>107</gid>
+   <type>fragile</type>
+     <Name>clay</Name>
+    <rate>Rs25/kg</rate>
+  </goods>
+  <goods>
+    <gid>108</gid>
+   <type>nonfragile</type>
+     <Name>wooden</Name>
+    <rate>Rs10/kg</rate>
+  </goods>
+  <goods>
+    <gid>109</gid>
+   <type>motors</type>
+     <Name>bike</Name>
+    <rate>Rs08/kg</rate>
+  </goods>
+  <goods>
+    <gid>110</gid>
+   <type>Food Item</type>
+     <Name>Any</Name>
+    <rate>Rs10/kg</rate>
+  </goods>
+</FIOS>
