@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        //SET COOKIE       
+        function WriteCookie() {
+            if (document.getElementById('student').value == "") {
+                alert("Enter some value!");
+                return;
+            }
+            cookievalue = escape(document.getElementById('student').value) + ";";
+            document.cookie = "name=" + cookievalue;
+            "expires=Fri,2 Feb 2022 01:00:00 UTC;";
+            document.write("Setting Cookies : " + "name=" + cookievalue);
+        }
+        //READ COOKIE       
+        function ReadCookie() {
+            //var allcookies = document.cookie;
+            document.write("All Cookies : " + document.cookie);
+
+            // Get all the cookies pairs in an array
+            cookiearray = allcookies.split(';');
+
+            // Now take key value pair out of this array
+            for (var i = 0; i < cookiearray.length; i++) {
+                name = cookiearray[i].split('=')[0];
+                value = cookiearray[i].split('=')[1];
+                document.write("Key is : " + name + " and Value is : " + value);
+            }
+
+
+        }
+        // REMOVE COOKIE
+        function delete_cookie(student, bgcolor) {
+            document.cookie = 'name' +
+                '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+            alert("Deleting Cookies : " + "name=" + document.cookie);
+            document.cookie = 'color' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+        }
+        // BACKGROUND COLOR
+        function show() {
+            var value = document.getElementById("bgcolor").value;
+            if (value != "Select Color") {
+                document.bgColor = value;
+                document.cookie = "color=" + value +
+                    ";expires=Fri,2 Feb 2022 01:00:00 UTC;";
+            }
+        }
+        window.onload = function() {
+                if (document.cookie.length != 0) {
+                    var a = document.cookie.split("=");
+                    document.getElementById("demo").value = a[1];
+                    document.bgColor = a[1];
+                }
+            }
+            //LOCAL STORAGE
+        localStorage.setItem('name', 'Abhishek')
+        localStorage.setItem('ID', '101')
+        localStorage.getItem('name', 'Abhishek')
+        localStorage.getItem('ID', '101')
+
+
+        if (localStorage.pagecount) {
+            localStorage.pagecount = Number(localStorage.pagecount) + 1;
+        } else {
+            localStorage.pagecount = 1;
+        }
+        //SESSION STORAGE
+        sessionStorage.setItem('name', 'Rahul')
+        sessionStorage.setItem('ID', '102')
+    </script>
+</head>
+
+<body>
+    <form name="myform" action="">
+        Enter name: <input type="text" id="student" />
+        <input type="button" value="Set Cookie" onclick="WriteCookie();" /><br>
+        <p> click the following button and see the result:</p>
+        <input type="button" value="Get Cookie" onclick="ReadCookie()" />
+        <input type="button" value="Delete" onclick="delete_cookie()" /><br>
+    </form><br>
+    <p>Select Background Color</p>
+    <select id="bgcolor" onchange="show()"><br>
+        <option value="Select Color">Select Color</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        </select>
+</body>
+
+</html>
