@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Christ UNiversity
+    </title>
+    <style>
+        body {
+            background: url("CHRISTUNIVERSITY3.JPG.png") no-repeat center center fixed;
+        }
+        
+        section {
+            margin: 0 auto;
+            width: 50%;
+            background: rgba(0, 0, 0, .5);
+            padding: 50px;
+            border-radius: 8px;
+            border: 2px solid #fff;
+            color: rgb(230, 129, 15);
+        }
+        
+        div {
+            width: 60%;
+            margin: 15px auto;
+            text-align: left;
+            margin-left: 0ch;
+        }
+        
+        label {
+            display: block;
+            padding: 20px;
+            font-size: 25px;
+        }
+        
+        input {
+            width: 96%;
+            padding: 10px;
+            border: 1px red;
+            margin-left: 20px;
+            border-radius: 3px;
+        }
+        
+        span {
+            display: block;
+            margin-left: 20px;
+            color: rgb(230, 129, 15);
+            ;
+            font-style: italic;
+        }
+        
+        .Radio {
+            display: inline;
+            margin-left: 20px;
+        }
+        
+        .checkbox {
+            display: inline-block;
+        }
+        
+        .checkbox label {
+            display: inline-block;
+        }
+        
+        .MenuOption {
+            text-align: left;
+            margin-left: 20px;
+            display: inline;
+            margin-left: 20px;
+        }
+        
+        .checkbox11 {
+            text-align: center;
+            margin: 20px;
+            padding: 30px;
+        }
+        
+        .checkbox11 button {
+            border-radius: 10px;
+            padding: 10px 40px;
+            color: red;
+            text-align: center;
+            background-color: skyblue;
+            margin-left: 5px;
+        }
+        
+        .checkbox11 input {
+            border-radius: 10px;
+            color: red;
+            text-align: center;
+            background-color: skyblue;
+            width: 150px;
+            margin-right: 10px;
+            padding: 10px;
+        }
+        
+        .ul {
+            list-style-type: square;
+            font-size: 30px;
+            padding: 5px;
+            color: rgb(230, 129, 15);
+            margin-left: 10px;
+        }
+        
+        .address {
+            margin-left: 20px;
+        }
+        
+        p {
+            color: rgb(236, 11, 150);
+            font-size: 30px;
+        }
+        
+        span {
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <h1 style="text-align: center;">CHRIST UNIVERSITY (CENTRAL CAMPUS BANGALORE)</h1>
+        <h3 style="text-align: center; text-decoration: underline;">FEED BACK FORM </h3>
+        <form action="">
+
+            <div><br><br>
+                <label for="name">User_Name</label>
+                <input type="text" id="name" placeholder="User_Name">
+                <span></span>
+            </div>
+            <div><br>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email-id">
+                <span></span>
+            </div>
+            <div><br>
+                <label for="number">Phone-Number</label>
+                <input type="number" id="number" placeholder="Phone-Number">
+                <span></span>
+            </div>
+            <div><br>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+                <span></span>
+            </div>
+            <div><br>
+                <label for="password">ReType-Password</label>
+                <input type="password" id="password2" placeholder="Retype_Password">
+                <span></span>
+            </div>
+            <div class="address">
+                <br>
+                <label style="margin-left: -17px;">Address</label>
+                <textarea height="-5" width="50"></textarea><br><br>
+            </div>
+
+            <div class="MenuOption">
+                <br><br>
+                <p>What are things that you like:</p>
+
+                <ul class="ul">
+                    <li><label><input type="checkbox" name="camp">Campus</label></li>
+                    <li><label><input type="checkbox" name="camp"/>Location</label></li>
+                    <li><label><input type="checkbox" name="camp">Student</label></li>
+                    <li><label><input type="checkbox" name="camp">Atmosphere</label></li>
+                    <li><label><input type="checkbox" name="camp">Dorm Room</label></li>
+                    <li><label><input type="checkbox" name="camp">Sport</label></li>
+                </ul>
+            </div>
+            <div class="Radio">
+                <br><br><br>
+                <p>
+                    How to became interested in university:</p>
+                <ul class="ul">
+                    <li><input type="radio" name="radiogroup1" id="rd1">
+                        <label for="rd1">friends</label></li>
+                    <li><input type="radio" name="radiogroup1" id="rd2"><label for="rd2">Telivision</label></li>
+
+                    <li> <input type="radio" name="radiogroup1" id="rd2">
+                        <label for="rd2">Internet</label></li>
+                    <li><input type="radio" name="radiogroup1" id="rd2">
+                        <label for="rd2">Others</label></li>
+                </ul>
+            </div>
+            <div class="checkbox11">
+                <button class="btn" onclick="validate()">Sign_Up</button>
+                <input class="checkbox11" type="reset" value="Reset">
+            </div>
+
+        </form>
+    </section>
+
+</body>
+
+</html>
+<script>
+    var name1 = document.getElementById('name');
+    var email = document.getElementById('email');
+    var number = document.getElementById('number');
+    var span = document.getElementsByTagName('span');
+    var password = document.getElementById('password');
+    var password1 = document.getElementById('password2');
+
+    name1.onkeydown = function() {
+        var nameregex = /^[A-Z\-]+[a-z\-]+$/;
+        var uname = document.getElementById('name').value;
+        document.getElementById('name').focus();
+        if (uname == "") {
+            span[0].innerText = "Name can'nt be blank";
+            span[0].style.color = "red";
+        } else if (uname.length < 8) {
+
+            span[0].innerText = "Name can'nt be less than 8 character";
+            span[0].style.color = "red";
+        } else if (nameregex.test(uname)) {
+            span[0].innerText = "your name is perfect!";
+            span[0].style.color = "lime";
+        } else if (/^[a-zA-Z0-9\-]+$/.test(uname)) {
+            span[0].innerText = "your name is invalid";
+            span[0].style.color = "red";
+        } else {
+            span[0].innerText = "Your name is Valid";
+            span[0].style.color = "lime";
+        }
+    }
+    email.onkeydown = function() {
+        const regex1 = /^[a-z]+@([a-z]+)\.([a-z]{10,16})+\.[a-z]{1,2}$/;
+
+        if (regex1.test(email.value)) {
+            span[1].innerText = "Your Email is Valid";
+            span[1].style.color = "lime";
+        } else {
+            span[1].innerText = "Invalid Email Id";
+            span[1].style.color = "red";
+        }
+    }
+    number.onkeydown = function() {
+        const regnum = /^[0-9]{10}$/;
+        if (regnum.test(number.value)) {
+            span[2].innerText = "Your Number is Valid";
+            span[2].style.color = "lime";
+        } else {
+            span[2].innerText = "Invalid Phone Number";
+            span[2].style.color = "red";
+        }
+    }
+    password.onkeydown = function() {
+        var pass = document.getElementById('password').value;
+
+        var pass1 = /^[a-zA-Z]{6,12}$/;
+        var pass2 = /^[a-zA-Z0-9]{6,12}$/;
+        var pass3 = /^[A-Z](?=.*[0-9])(?=.*[!@#$%^{}()&*])[a-zA-Z0-9!@#$%{}()^&*]{6,12}$/;
+        if (pass.match(pass1)) {
+            span[3].innerText = "Must include Digit(0-9)!";
+            span[3].style.color = "red";
+        } else if (pass.match(pass2)) {
+            span[3].innerText = "Must include special character ~`!@#$%^&*()-_+={}[]|\;:";
+            span[3].style.color = "red";
+        } else if (pass.match(pass3)) { // && pass1.test(pass)) {
+            span[3].innerText = "Strong passsword!";
+            span[3].style.color = "lime";
+
+        } else {
+            span[3].innerText = "TRy Something new!";
+            span[3].style.color = "red";
+        }
+
+    }
+    password1.onkeydown = function() {
+        var retype = document.getElementById('password2').value;
+        var pass = document.getElementById('password').value;
+
+        if (pass == retype) {
+            span[4].innerText = "Password Matched";
+            span[4].style.color = "lime";
+        } else {
+            span[4].innerText = "Password Must should be same!";
+            span[4].style.color = "red";
+        }
+    }
+
+    function validate() {
+        if (document.getElementById('name').value == "") {
+            alert('empty')
+
+        }
+        if (document.getElementById('email').value == "") {
+            alert('Plzz fill email_id')
+        }
+    }
+</script>
