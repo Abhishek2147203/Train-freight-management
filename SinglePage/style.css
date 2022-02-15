@@ -1,0 +1,37 @@
+.leftMenu {
+    padding: 20px;
+    width: 100%;
+    display: block;
+    background-color: blue;
+    position: sticky;
+    color: red;
+}
+
+.leftMenu a {
+    padding: 20px;
+    display: block;
+    font-size: 30px;
+}
+
+body {
+    background: url("train3.jpg") no-repeat center center fixed;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+}
+
+.mainContent {
+    width: 50%;
+    height: 50%;
+    padding-left: 40px;
+}
+
+table {
+    color: yellow;
+}
+
+table th {
+    color: red;
+}

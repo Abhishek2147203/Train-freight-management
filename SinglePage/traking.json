@@ -1,0 +1,10 @@
+{
+    "trains": [
+        { "bid": 101, "uid": 1, "expdate": "12-01-2022", "trainno": 12345 },
+        { "bid": 102, "uid": 2, "expdate": "12-01-2022", "trainno": 12345 },
+        { "bid": 103, "uid": 3, "expdate": "12-01-2022", "trainno": 12456 },
+        { "bid": 104, "uid": 4, "expdate": "12-01-2022", "trainno": 19243 },
+        { "bid": 105, "uid": 5, "expdate": "12-01-2022", "trainno": 23242 },
+        { "bid": 106, "uid": 6, "expdate": "12-01-2022", "trainno": 14234 }
+    ]
+}

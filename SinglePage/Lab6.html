@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab6</title>
+    <style type="text/css">
+        body {
+            background: url("train3.jpg") no-repeat center center fixed;
+        }
+        
+        section {
+            margin: 0 auto;
+            width: 500px;
+            background: rgba(0, 0, 0, .5);
+            padding: 50px;
+            border-radius: 8px;
+            border: 2px solid #fff;
+            color: red;
+        }
+        
+        div {
+            width: 60%;
+            margin: 15px auto;
+            text-align: left;
+            margin-left: 0ch;
+        }
+        
+        label {
+            display: block;
+            padding: 20px;
+            font-size: 25px;
+        }
+        
+        input {
+            width: 96%;
+            padding: 10px;
+            border: 1px red;
+            margin-left: 20px;
+            border-radius: 3px;
+        }
+        
+        span {
+            display: block;
+            margin-left: 20px;
+            color: red;
+            font-style: italic;
+        }
+        
+        .Radio {
+            display: flex;
+            margin-left: -15px;
+            font-size: 25px;
+        }
+        
+        .checkbox {
+            display: flex;
+            margin-left: -60px;
+            font-size: 20px;
+        }
+        
+        .checkbox label {
+            display: inline-block;
+        }
+        
+        .MenuOption {
+            text-align: left;
+            margin-left: 20px;
+        }
+        
+        .checkbox11 {
+            text-align: center;
+            margin: 20px;
+            padding: 30px;
+            width: 120px;
+            display: flex;
+        }
+        
+        .checkbox11 button {
+            border-radius: 10px;
+            padding: 10px 40px;
+            color: red;
+            text-align: left;
+            background-color: skyblue;
+        }
+        
+        .checkbox11 input {
+            border-radius: 10px;
+            padding: 10px 40px;
+            color: red;
+            text-align: left;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2 style="text-align: center;">Register FIOS</h2>
+        <form action="">
+            <div>
+                <label for="name">User_Name</label>
+                <input type="text" id="name" placeholder="User_Name">
+                <span></span>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email-id">
+                <span></span>
+            </div>
+            <div>
+                <label for="number">Phone-Number</label>
+                <input type="number" id="number" placeholder="Phone-Number">
+                <span></span>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+                <span></span>
+            </div>
+            <div>
+                <label for="password">ReType-Password</label>
+                <input type="password" id="password2" placeholder="Retype_Password">
+                <span></span>
+            </div><br>
+            <div class="Radio">
+                <input type="radio" name="radiogroup1" id="rd1" <label style="font-size: 30px;" for="rd1">Male</label>
+
+                <input type="radio" name="radiogroup1" id="rd2" <label for="rd2">Female</label>
+
+            </div>
+            <div class="MenuOption">
+                <select>
+                    <option>Select a country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>Austrelia</option>
+                    <option>New_zealand</option>
+                    <option>South_Africa</option>
+                  </select>
+                <div class="select_arrow"></div>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" <p>I agree with terms and conditions</p>
+
+
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" <p style="font-size: 60px;">I want to receive the newsletter</p>
+
+
+            </div>
+            <div class="checkbox11">
+                <button class="btn" onclick="validate()">Sign_Up</button>
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
+<script>
+    var name1 = document.getElementById('name');
+    var email = document.getElementById('email');
+    var number = document.getElementById('number');
+    var span = document.getElementsByTagName('span');
+    var password = document.getElementById('password');
+    var password1 = document.getElementById('password2');
+
+    name1.onkeydown = function() {
+        var nameregex = /^[a-zA-Z\-]+$/;
+        var uname = document.getElementById('name').value;
+        document.getElementById('name').focus();
+        if (uname == null || uname == null) {
+            span[0].innerText = "Name can'nt be blank";
+            span[0].style.color = "red";
+        } else if (uname.length < 8) {
+
+            span[0].innerText = "Name can'nt be less than 8 character";
+            span[0].style.color = "red";
+        } else if (nameregex.test(uname)) {
+            span[0].innerText = "your name is perfect!";
+            span[0].style.color = "lime";
+        } else if (/^[a-zA-Z0-9\-]+$/.test(uname)) {
+            span[0].innerText = "your name is invalid";
+            span[0].style.color = "red";
+        } else {
+            span[0].innerText = "Your name is Valid";
+            span[0].style.color = "lime";
+        }
+    }
+    email.onkeydown = function() {
+        const regex1 = /^[a-z]+@([a-z]+)\.([a-z]{10,16})+\.[a-z]{1,2}$/;
+
+        if (regex1.test(email.value)) {
+            span[1].innerText = "Your Email is Valid";
+            span[1].style.color = "lime";
+        } else {
+            span[1].innerText = "Invalid Email Id";
+            span[1].style.color = "red";
+        }
+    }
+    number.onkeydown = function() {
+        const regnum = /^[0-9]{10}$/;
+        if (regnum.test(number.value)) {
+            span[2].innerText = "Your Number is Valid";
+            span[2].style.color = "lime";
+        } else {
+            span[2].innerText = "Invalid Phone Number";
+            span[2].style.color = "red";
+        }
+    }
+
+    password.onkeydown = function() {
+        var pass = document.getElementById('password').value;
+
+        var pass1 = /^[a-zA-Z]{6,12}$/;
+        var pass2 = /^[a-zA-Z0-9]{6,12}$/;
+        var pass3 = /^[A-Z](?=.*[0-9])(?=.*[!@#$%^{}()&*])[a-zA-Z0-9!@#$%{}()^&*]{6,12}$/;
+        if (pass.match(pass1)) {
+            span[3].innerText = "Must include Digit(0-9)!";
+            span[3].style.color = "red";
+        } else if (pass.match(pass2)) {
+            span[3].innerText = "Must include special character ~`!@#$%^&*()-_+={}[]|\;:";
+            span[3].style.color = "red";
+        } else if (pass.match(pass3)) { // && pass1.test(pass)) {
+            span[3].innerText = "Strong passsword!";
+            span[3].style.color = "lime";
+
+        } else {
+            span[3].innerText = "TRy Something new!";
+            span[3].style.color = "red";
+        }
+
+    }
+    password1.onkeydown = function() {
+        var retype = document.getElementById('password2').value;
+        var pass = document.getElementById('password').value;
+
+        if (pass == retype) {
+            span[4].innerText = "Password Matched";
+            span[4].style.color = "lime";
+        } else {
+            span[4].innerText = "Password Must should be same!";
+            span[4].style.color = "red";
+        }
+    }
+
+    function validate() {
+        if (document.getElementById('name').value == "") {
+            alert('empty')
+
+        }
+        if (document.getElementById('email').value == "") {
+            alert('Plzz fill email_id')
+        }
+    }
+</script>

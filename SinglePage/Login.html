@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FIOS Login</title>
+    <link rel="stylesheet" type="text/css" href="login1.css">
+
+</head>
+
+<body id="loginbody" onload="checkCookie()">
+    <div class="container">
+        <div class="loginheader">
+            <h1>INDIAN CENTRAL RAILWAY</h1>
+            <h3>Railway Freight Management System</h3>
+        </div>
+        <div class="loginbody">
+            <form action="">
+                <div class="loginInputsContainer">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email-id">
+                    <span></span>
+                </div>
+                <div class="loginInputsContainer">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                    <span></span>
+                </div>
+                <div class="loginButtom">
+                    <button><a href="UserDetails.html">Login</a></button>
+                </div>
+                <div class="loginButtom">
+                    <button><a href="Lab6.html">Sign-up</a></button>
+                </div>
+                <div class="loginButtom">
+                    <button onclick="delete_cookie()">SignOut</button>
+                </div>
+                <div style="text-align: center; color: #f7f2f2;">
+                    <a href="">Forget username/password</a>
+                </div>
+
+            </form>
+        </div>
+</body>
+
+</html>
+<script>
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
+    email.onkeydown = function() {
+        const regex1 = /^[a-z]+@([a-z]+)\.([a-z]{10,16})+\.[a-z]{1,2}$/;
+
+        if (regex1.test(email.value)) {
+            span[0].innerText = "Your Email is Valid";
+            span[0].style.color = "lime";
+        } else {
+            span[0].innerText = "Invalid Email Id";
+            span[0].style.color = "red";
+        }
+    }
+    password.onkeydown = function() {
+        var pass = document.getElementById('password').value;
+
+        var pass3 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/;
+
+
+        if (pass.match(pass3)) {
+            span[1].innerText = "Strong passsword!";
+            span[1].style.color = "lime";
+
+        } else {
+            span[1].innerText = "TRy Something new!";
+            span[1].style.color = "red";
+        }
+
+    }
+
+    function delete_cookie(student, bgcolor) {
+        document.cookie = 'name' +
+            '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+        alert("Deleting Cookies : " + "name=" + document.cookie);
+        document.cookie = 'color' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        let user = getCookie("username");
+        if (user != "") {
+            alert("Welcome again " + user);
+        } else {
+            user = prompt("Please enter your name:", "");
+            if (user != "" && user != null) {
+                setCookie("username", user, 30);
+            }
+        }
+    }
+
+    function delete_cookie(cname) {
+        document.cookie = 'username' +
+            '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+        alert("Deleting Cookies : " + "name=" + document.cookie);
+        document.cookie = 'color' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+    }
+</script>
